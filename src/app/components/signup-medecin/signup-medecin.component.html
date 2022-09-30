@@ -1,0 +1,345 @@
+<div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="h3 mb-5 text-black" style="color: #75b239;">Sign Up :</h2>
+        </div>
+        <div class="col-md-12">
+  
+          <form [formGroup]="signUpMedecinForm">
+  
+            <div class="p-3 p-lg-5 border">
+              <div class="form-group row">
+                <div class="col-md-6">
+                    <div class="form-group ">
+                        <label style="color: black;">Nom :<span class="required">*</span></label>
+                        <input type="text" 
+                        class="form-control"
+                        formControlName="firstName"
+                        placeholder="Nom">
+                    </div>
+                    <div
+                                                  *ngIf="
+                                                    signUpMedecinForm.controls['firstName'].invalid &&
+                                                    (signUpMedecinForm.controls['firstName'].touched ||
+                                                      signUpMedecinForm.controls['firstName'].dirty)
+                                                  "
+                                                >
+                                                  <div
+                                                    *ngIf="signUpMedecinForm.controls['firstName'].errors.required"
+                                                    style="color: red"
+                                                  >
+                                                    Nom est obligatoire
+                                                  </div>
+                                                  <div
+                                                    *ngIf="signUpMedecinForm.controls['firstName'].errors.minlength"
+                                                    style="color: red"
+                                                  >
+                                                  Le nom doit comporter plus de 4 caractères
+                                                  </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group ">
+                        <label style="color: black;">Prénom :<span class="required">*</span></label>
+                        <input type="text"  
+                        class="form-control"
+                        formControlName="lastName"
+                        placeholder="Prénom ">
+                    </div>
+                    <div
+                                                  *ngIf="
+                                                    signUpMedecinForm.controls['lastName'].invalid &&
+                                                    (signUpMedecinForm.controls['lastName'].touched ||
+                                                      signUpMedecinForm.controls['lastName'].dirty)
+                                                  "
+                                                >
+                                                  <div
+                                                    *ngIf="signUpMedecinForm.controls['lastName'].errors.required"
+                                                    style="color: red"
+                                                  >
+                                                    Prénom est obligatoire
+                                                  </div>
+                                                  <div
+                                                    *ngIf="signUpMedecinForm.controls['lastName'].errors.minlength"
+                                                    style="color: red"
+                                                  >
+                                                  Le prénom doit comporter plus de 2 caractères
+                                                  </div>
+                    </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                    <div class="form-group ">
+                        <label style="color: black;">E-mail :<span class="required">*</span></label>
+
+                        <input type="email"
+                        class="form-control"
+                        formControlName="email"
+                        placeholder="Email">
+                    </div>
+                    <div
+                    *ngIf="
+                      signUpMedecinForm.controls['email'].invalid &&
+                      (signUpMedecinForm.controls['email'].touched ||
+                        signUpMedecinForm.controls['email'].dirty)
+                    "
+                  >
+                    <div
+                      *ngIf="signUpMedecinForm.controls['email'].errors.required"
+                      style="color: red"
+                    >
+                      E-mail est obligatoire
+                    </div>
+                    <div
+                      *ngIf="signUpMedecinForm.controls['email'].errors.email"
+                      style="color: red"
+                    >
+                      Format invalid
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label style="color: black;">Téléphone :<span class="required">*</span></label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          formControlName="phone"
+                          placeholder="11 111 111"
+                        />
+                      </div>
+                      <div
+                        *ngIf="
+                          signUpMedecinForm.controls['phone'].invalid &&
+                          (signUpMedecinForm.controls['phone'].touched ||
+                            signUpMedecinForm.controls['phone'].dirty)
+                        "
+                      >
+                        <div
+                          *ngIf="signUpMedecinForm.controls['phone'].errors.required"
+                          style="color: red"
+                        >
+                          Phone Required
+                        </div>
+                        <div
+                          *ngIf="signUpMedecinForm.controls['phone'].errors.minlength"
+                          style="color: red"
+                        >
+                          Phone number must have 8 characters
+                        </div>
+                        
+                      </div>
+                </div>
+              </div> 
+              <div  class="form-group row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label style="color: black;">CIN :<span class="required">*</span></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="cin"
+                          placeholder="12345678"
+                        />
+                      </div>
+                      <div
+                        *ngIf="
+                          signUpMedecinForm.controls['cin'].invalid &&
+                          (signUpMedecinForm.controls['cin'].touched ||
+                            signUpMedecinForm.controls['cin'].dirty)
+                        "
+                      >
+                        <div
+                          *ngIf="signUpMedecinForm.controls['cin'].errors.required"
+                          style="color: red"
+                        >
+                          CIN est obligatoire
+                        </div>
+                        <div
+                          *ngIf="signUpMedecinForm.controls['cin'].errors.minlength"
+                          style="color: red"
+                        >
+                          CIN doive contenir 8 chiffres
+                        </div>
+                        <div
+                          *ngIf="signUpMedecinForm.controls['cin'].errors.maxlength"
+                          style="color: red"
+                        >
+                          CIN doive contenir 8 chiffres
+                        </div>
+                       
+                      </div>
+                       
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label style="color: black;">Addresse :<span class="required">*</span></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="adress"
+                          placeholder="..... rue ....."
+                        />
+                      </div>
+                      <div
+                        *ngIf="
+                          signUpMedecinForm.controls['adress'].invalid &&
+                          (signUpMedecinForm.controls['adress'].touched ||
+                            signUpMedecinForm.controls['adress'].dirty)
+                        "
+                      >
+                        <div
+                          *ngIf="signUpMedecinForm.controls['adress'].errors.required"
+                          style="color: red"
+                        >
+                          Adresse est obligatoire
+                        </div>
+                       
+                       
+                      </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                    <div class="form-group ">
+                        <label style="color: black;">Region :<span class="required">*</span></label>
+
+                        <input type="text"
+                        class="form-control"
+                        formControlName="region"
+                        placeholder="Exemple : Monastir">
+                    </div>
+                    <div
+                    *ngIf="
+                      signUpMedecinForm.controls['region'].invalid &&
+                      (signUpMedecinForm.controls['region'].touched ||
+                        signUpMedecinForm.controls['region'].dirty)
+                    "
+                  >
+                    <div
+                      *ngIf="signUpMedecinForm.controls['region'].errors.required"
+                      style="color: red"
+                    >
+                      Region est obligatoire
+                    </div>
+                    
+                    
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-group row">
+                
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label style="color: black;">Rôle :<span class="required">*</span></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="role"
+                          placeholder="rôle"
+                        />
+                      </div>
+                      <div
+                        *ngIf="
+                          signUpMedecinForm.controls['role'].invalid &&
+                          (signUpMedecinForm.controls['role'].touched ||
+                            signUpMedecinForm.controls['role'].dirty)
+                        "
+                      >
+                        <div
+                          *ngIf="signUpMedecinForm.controls['role'].errors.required"
+                          style="color: red"
+                        >
+                          Rôle est obligatoire
+                        </div>
+                        
+                      </div>
+                </div>
+              </div>
+              <div  class="form-group row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label style="color: black;">Mot de passe :<span class="required">*</span></label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        formControlName="password"
+                        placeholder="*********"
+                      />
+                      <div
+                      *ngIf="
+                        signUpMedecinForm.controls['password'].invalid &&
+                        (signUpMedecinForm.controls['password'].touched ||
+                          signUpMedecinForm.controls['password'].dirty)
+                      "
+                    >
+                      <div
+                        *ngIf="signUpMedecinForm.controls['password'].errors.required"
+                        style="color: red"
+                      >
+                        Mot de passe est obligatoire
+                      </div>
+                     
+                      <div
+                      *ngIf="signUpMedecinForm.controls['password'].errors.pattern"
+                      style="color: red"
+                    >
+                    Le mot de passe doit contenir plus de 8 caractères, 1 chiffre, 1 lettre majuscule et 1 caractère ($@$!%*?&)
+                    </div>
+                     
+                    </div>
+                    </div>
+                   </div>
+              </div> 
+               <div  class="form-group row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label style="color: black;">Confirme mot de passe :<span class="required">*</span></label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        formControlName="confirmPassword"
+                        placeholder="*********"
+                      />
+                      <div
+                      *ngIf="
+                        signUpMedecinForm.controls['confirmPassword'].invalid &&
+                        (signUpMedecinForm.controls['confirmPassword'].touched ||
+                          signUpMedecinForm.controls['confirmPassword'].dirty)
+                      "
+                    >
+                      <div
+                        *ngIf="signUpMedecinForm.controls['confirmPassword'].errors.mustMatch"
+                        style="color: red"
+                      >
+                      Le mot de passe ne correspond pas à Confirme mot de passe
+                      </div>
+                    </div>
+          
+                    </div>
+                   </div>  
+              </div>
+
+              <div class="form-group row">
+                <div class="col-lg-12" style="text-align: center;">
+                    <input
+                    type="submit"
+                    class="btn btn-primary py-3 px-5 mb-0"
+                    (click)="signUpMedecin()"
+                    value="Sign up"
+                  />
+                </div>
+                
+              </div>
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>

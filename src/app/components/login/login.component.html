@@ -1,0 +1,42 @@
+<div class="site-section" style="align-items: center; margin-left: 28%; margin-top: 8%;" >
+    <div class="container">
+      <div class="row" >
+        <div class="col-md-12">
+          <h2 class="h3 mb-5 text-black" style="color: #75b239;">Log In :</h2>
+        </div>
+        <div class="col-md-6">
+  
+            <form #loginForm="ngForm" (ngSubmit)="login()">
+                <!-- Email -->
+                <div class="mb-4">
+                    <label for="exampleInputEmail1" >Email address / IDN</label>
+                    <div class="input-group">
+                        <span ><i class="bi bi-envelope-fill"></i></span>
+                        <input  class="form-control  " placeholder="E-mail / IDN" 
+                        type="text"  [(ngModel)]="user.email" name="email"
+                        >
+                    </div>
+                </div>
+                <!-- Password -->
+                <div class="mb-4">
+                    <label for="inputPassword5" class="form-label">Password *</label>
+                    <div class="">
+                        <span ><i class="fas fa-lock"></i></span>
+                        <input type="password" class="form-control"  [(ngModel)]="user.password" name="password" 
+                          placeholder="Password" >
+                    </div>
+                    
+                </div>
+                <span  style="color: red;">{{emailError}}</span>
+                
+                <!-- Button -->
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary py-3 px-5" style="border-radius: 30px;" value="Login" >
+                </div>
+                
+            </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>

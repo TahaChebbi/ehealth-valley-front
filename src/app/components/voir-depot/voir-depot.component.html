@@ -1,0 +1,98 @@
+
+
+
+<div class="site-section">
+    <div class="container">
+      <div >
+        <div class="col-md-6">
+          <form class="rounded position-relative">
+              <input class="form-control pe-5 bg-transparent" type="text" placeholder="Search"  [(ngModel)]="term"  id="" name="search" style="background-color:#75b239 ;">
+             
+          </form>
+      </div><br>
+          <div class="tab-content" id="pills-tabContent" style="color: black;">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">CODE_PCT</th>
+                        <th scope="col">NOM_COMMERCIAL</th>
+                        <th scope="col">PRIX_PUBLIC</th>
+                        <th scope="col">TARIF_REFERENCE</th>
+                        <th scope="col">CATEGORIE</th>
+                        <th scope="col">DCI</th>
+                        <th scope="col">QUANTITE</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let medicament of medicaments | filtreMedicament:term">
+                      <tr *ngIf="conteur==1">
+                       
+                            <td>{{medicament.codepct}}</td>
+                            <td>{{medicament.nom}}</td>
+                            <td>{{medicament.prix}}</td>
+                            <td>{{medicament.tarif}}</td>
+                            <td>{{medicament.categorie}}</td>
+                            <td>{{medicament.dci}}</td>
+                            <td>{{medicament.quantite}}</td>
+                       
+                        
+                      
+                      </tr>
+                     
+                    </tbody>
+                  </table><br>
+                  <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary col-md-12" style="border-radius: 20px;" data-toggle="modal" data-target="#exampleModalLong" (click)="reclamation()">
+                Voir les réclamations
+              </button>
+
+<!-- Modal -->
+              <div class="modal fade " id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Réclamations :</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body ">
+                      <table class="table" >
+                        <thead>
+                          <tr>
+                            <th >PHARMACIE</th>
+                            <th >REGION</th>
+                            <th >MEDICAMENT</th>
+                            <th >QUANTITE</th>
+                          
+                            
+                          </tr>
+                        </thead>
+                        <tbody >
+                          <tr *ngFor="let reclamation of reclamations ">
+                          
+                                <td>{{reclamation.nomPharmacie}}</td>
+                                <td>{{reclamation.region}}</td>
+                                <td>{{reclamation.nomMedicament}}</td>
+                                <td>{{reclamation.quantiteDemande}}</td>
+                              
+                          </tr>
+                        
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary"style="border-radius: 20px;" data-dismiss="modal">Close</button>
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+
+          </div>
+      </div>
+    </div>
+  </div>

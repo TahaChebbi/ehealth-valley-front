@@ -1,0 +1,259 @@
+<div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="h3 mb-5 text-black" style="color: #75b239;">Sign Up :</h2>
+        </div>
+        <div class="col-md-12">
+  
+          <form [formGroup]="signupForm">
+  
+            <div class="p-3 p-lg-5 border">
+              <div class="form-group row">
+                <div class="col-md-6">
+                    <div class="form-group ">
+                        <label style="color: black;">Nom complet :<span class="required">*</span></label>
+                        <input type="text"  
+                        class="form-control"
+                        formControlName="fullName"
+                        placeholder="Pharmacie ....">
+                    </div>
+                    <div
+                    *ngIf="
+                      signupForm.controls['fullName'].invalid &&
+                      (signupForm.controls['fullName'].touched ||
+                        signupForm.controls['fullName'].dirty)
+                    "
+                  >
+                    <div
+                      *ngIf="signupForm.controls['fullName'].errors.required"
+                      style="color: red"
+                    >
+                      Nom est obligatoire
+                    </div>
+                    <div
+                      *ngIf="signupForm.controls['fullName'].errors.minlength"
+                      style="color: red"
+                    >
+                    Le nom doit comporter plus de 2 caractères
+                    </div>
+</div>
+                </div>
+                <div class="col-md-6">
+                    <label style="color: black;">E-mail :<span class="required">*</span></label>
+
+                    <input type="email"
+                    class="form-control"
+                    formControlName="email"
+                    placeholder="Email">
+                    <div
+                            *ngIf="
+                              signupForm.controls['email'].invalid &&
+                              (signupForm.controls['email'].touched ||
+                                signupForm.controls['email'].dirty)
+                            "
+                          >
+                            <div
+                              *ngIf="signupForm.controls['email'].errors.required"
+                              style="color: red"
+                            >
+                              E-mail est obligatoire
+                            </div>
+                            <div
+                              *ngIf="signupForm.controls['email'].errors.email"
+                              style="color: red"
+                            >
+                              Format invalid
+                            </div>
+                          </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                    <label style="color: black;">Region :<span class="required">*</span></label>
+
+                                <input type="text"
+                                class="form-control"
+                                formControlName="region"
+                                placeholder="Exemple : Monastir">
+                                <div
+                            *ngIf="
+                              signupForm.controls['region'].invalid &&
+                              (signupForm.controls['region'].touched ||
+                                signupForm.controls['region'].dirty)
+                            "
+                          >
+                            <div
+                              *ngIf="signupForm.controls['region'].errors.required"
+                              style="color: red"
+                            >
+                              Region est obligatoire
+                            </div>
+                            
+                            
+                          </div>
+                </div>
+                <div class="col-md-6">
+                    <label style="color: black;">Addresse :<span class="required">*</span></label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="adress"
+                      placeholder="..... rue ....."
+                    />
+                    <div
+                                *ngIf="
+                                  signupForm.controls['adress'].invalid &&
+                                  (signupForm.controls['adress'].touched ||
+                                    signupForm.controls['adress'].dirty)
+                                "
+                              >
+                                <div
+                                  *ngIf="signupForm.controls['adress'].errors.required"
+                                  style="color: red"
+                                >
+                                  Adresse est obligatoire
+                                </div>
+                               
+                               
+                              </div>
+                </div>
+              </div>
+            
+  
+              <div class="form-group row">
+                <div class="col-md-12">
+                    <label style="color: black;">Categorie :<span class="required">*</span></label>
+                    <select  class="form-control" formControlName="category" name="category" style="text-align: center;">
+                        
+                        <option value="central">Centrale</option>
+                        <option value="local">Privée</option>
+                        
+                       
+                        
+                    </select>
+                    <div
+                    *ngIf="
+                    signupForm.controls['category'].invalid &&
+                    (signupForm.controls['category'].touched ||
+                        signupForm.controls['category'].dirty)
+                    "
+                >
+                    <div
+                    *ngIf="signupForm.controls['category'].errors.required"
+                    style="color: red"
+                    >
+                    Categorie est obligatoire
+                    </div>
+                  
+       
+      
+                </div>
+                </div>
+              </div>
+            
+              <div class="form-group row">
+                
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label style="color: black;">Rôle :<span class="required">*</span></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="role"
+                          placeholder="rôle"
+                        />
+                      </div>
+                      <div
+                        *ngIf="
+                          signupForm.controls['role'].invalid &&
+                          (signupForm.controls['role'].touched ||
+                            signupForm.controls['role'].dirty)
+                        "
+                      >
+                        <div
+                          *ngIf="signupForm.controls['role'].errors.required"
+                          style="color: red"
+                        >
+                          Rôle est obligatoire
+                        </div>
+                        
+                      </div>
+                </div>
+              </div>
+               <div  class="form-group row">
+                <div class="col-md-12">
+                    <label style="color: black;">Mot de passe :<span class="required">*</span></label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      formControlName="password"
+                      placeholder="*********"
+                    />
+                    <div
+                          *ngIf="
+                            signupForm.controls['password'].invalid &&
+                            (signupForm.controls['password'].touched ||
+                              signupForm.controls['password'].dirty)
+                          "
+                        >
+                          <div
+                            *ngIf="signupForm.controls['password'].errors.required"
+                            style="color: red"
+                          >
+                            Mot de passe est obligatoire
+                          </div>
+                         
+                          <div
+                          *ngIf="signupForm.controls['password'].errors.pattern"
+                          style="color: red"
+                        >
+                        Le mot de passe doit contenir plus de 8 caractères, 1 chiffre, 1 lettre majuscule et 1 caractère ($@$!%*?&)
+                        </div>
+                         
+                        </div>
+                </div>
+              </div>
+               <div  class="form-group row">
+                <div class="col-md-12">
+                    <label style="color: black;">Confirme mot de passe :<span class="required">*</span></label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      formControlName="confirmPassword"
+                      placeholder="*********"
+                    />
+                    <div
+                          *ngIf="
+                            signupForm.controls['confirmPassword'].invalid &&
+                            (signupForm.controls['confirmPassword'].touched ||
+                              signupForm.controls['confirmPassword'].dirty)
+                          "
+                        >
+                          <div
+                            *ngIf="signupForm.controls['confirmPassword'].errors.mustMatch"
+                            style="color: red"
+                          >
+                          Le mot de passe ne correspond pas à Confirme mot de passe
+                          </div>
+                        </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-lg-12" style="text-align: center;">
+                    <input
+                    type="submit"
+                    class="btn btn-primary py-3 px-5 mb-0"
+                    (click)="signup()"
+                    value="Sign up"
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>

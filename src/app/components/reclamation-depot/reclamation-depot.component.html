@@ -1,0 +1,53 @@
+<div class="site-section">
+    <div class="container">
+      <div class="col-md-6">
+        <form class="rounded position-relative">
+            <input class="form-control pe-5 bg-transparent" type="text" placeholder="Search"  [(ngModel)]="term"  id="" name="search" style="background-color:#75b239 ;">
+           
+        </form>
+    </div><br>
+      <div >
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Réclamations</a>
+            </li>
+           
+           
+           
+          </ul>
+          <div class="tab-content" id="pills-tabContent" style="color: black;">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+             
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">NOM_MEDICAMENT</th>
+                        <th scope="col">CODE_PCT</th>
+                        <th scope="col">QUANTITE</th>
+                        <th scope="col">REPONSE</th>
+ 
+                        
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr *ngFor="let rec of objectReclamation">
+                        
+                            <td>{{rec.code_pct}}</td>
+                            <td>{{rec.nommed}}</td>
+                            <td>{{rec.qte}}</td>
+
+                         
+                        
+                      
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                  
+            </div>
+            
+            
+          </div>
+      </div>
+    </div>
+  </div>
